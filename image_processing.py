@@ -18,12 +18,12 @@ from skimage import img_as_ubyte
 #------------------------------------------------------------------------------------------------------------------
 #   Load image
 #------------------------------------------------------------------------------------------------------------------
-scale = 1
+scale = 15
 img_width = int(1920/scale)
 img_height = int(1080/scale)
 
 rgb = io.imread('Imágenes/Ciudad/OMM_5.jpg')
-rgb_resized = resize(rgb, (img_height, img_width), anti_aliasing=False)   
+rgb_resized = resize(rgb, (img_height, img_width), anti_aliasing=True)
 
 plt.imshow(rgb_resized)
 plt.show()
