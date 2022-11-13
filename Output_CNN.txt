@@ -1,3 +1,5 @@
+CNN con 10 épocas en cada split del kfold
+
 ***** Fold: 1 *****
 Epoch 1/10
 202/202 [==============================] - 47s 233ms/step - loss: 12.1928
