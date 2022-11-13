@@ -1,12 +1,13 @@
 """ Archivo para serializar las imágenes o sus descriptores y guardarlos en un archivo con los datos serializados """
 """ Para que funcione el código, ten las carpetas de cada bioma dentro de una carpeta llamada 'Images' """
 """ Para obtener los descriptores se usaron las imágenes redimencionadas a 128px x 72px y coloreadas en escalas de grises"""
+""" El resultado es un archivo con un diccionario con los datos seleccionados serializados """
 
 import os
 import pickle
 
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 from skimage import io
 from skimage.transform import resize
