@@ -1,5 +1,12 @@
+import os
+import pickle
 from tkinter import *
+from random import randrange
+from test import get_prediction
  
+with open(os.getcwd() + "\\MLPClassifier.clf", "rb") as file:
+    clf = pickle.load(file)
+
 # creating the tkinter window
 main_window = Tk(className='Lector de Biomas')
 main_window.configure(bg='white')
@@ -11,12 +18,16 @@ bioma = StringVar()
 def start_reader():
     start_btn.pack_forget()
     stop_btn.pack()
-    bioma.set("Agua")
+    set_bioma(get_prediction(clf))
+
+def set_bioma(prediction):
+    bioma.set(prediction)
 
 def stop_reader():
     start_btn.pack()
     stop_btn.pack_forget()
-    bioma.set("Cultivo")
+
+    #bioma.set("Cultivo")
 # create a button widget and attached  
 # with counter function  
 start_btn = Button(main_window,
