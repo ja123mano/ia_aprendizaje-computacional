@@ -1,5 +1,6 @@
 import os
 import pickle
+import time
 from tkinter import *
 from random import randrange
 from test import get_prediction
@@ -17,7 +18,10 @@ bioma = StringVar()
 
 def start_reader():
     bioma.set("...")
+    main_window.state(newstate='iconic')
+    time.sleep(0.2)
     set_bioma(get_prediction(clf))
+    main_window.state(newstate='normal')
 
 def set_bioma(prediction):
     bioma.set(prediction)
