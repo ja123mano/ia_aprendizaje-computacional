@@ -1,4 +1,4 @@
-***Para correr la interfaz, ejecutar "ui.py"***
+**Para correr la interfaz, ejecutar "ui.py"**
 
 # Instrucciones
 ----------------
