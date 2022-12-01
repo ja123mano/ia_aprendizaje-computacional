@@ -1,5 +1,6 @@
 import os
 import pickle
+import time
 from tkinter import *
 from random import randrange
 from test import get_prediction
@@ -16,37 +17,27 @@ main_window.resizable(width=False, height=False)
 bioma = StringVar()
 
 def start_reader():
-    start_btn.pack_forget()
-    stop_btn.pack()
+    bioma.set("...")
+    main_window.state(newstate='iconic')
+    time.sleep(0.2)
     set_bioma(get_prediction(clf))
+    main_window.state(newstate='normal')
 
 def set_bioma(prediction):
     bioma.set(prediction)
 
-def stop_reader():
-    start_btn.pack()
-    stop_btn.pack_forget()
 
     #bioma.set("Cultivo")
 # create a button widget and attached  
 # with counter function  
-start_btn = Button(main_window,
-                   text = "Start",
+read_btn = Button(main_window,
+                   text = "Read",
                    command = start_reader,
                    padx = 30,
                    pady = 5,
                    bg='green',
                    fg='white',
-                   font=('Helvetica bold',10))
-
-stop_btn = Button(main_window,
-                   text = "Stop",
-                   command = stop_reader,
-                   padx = 30,
-                   pady = 5,
-                   bg='red',
-                   font=('Helvetica bold',10))
-            
+                   font=('Helvetica bold',10)) 
  
 # create a Label widget
 my_label = Label(main_window,
@@ -59,10 +50,9 @@ label_bioma = Label(main_window,
                     font=('Helvetica bold', 25),
                     bg='white')
 
-bioma.set("Ciudad")
-
+bioma.set("...")
 my_label.pack()
 label_bioma.pack()
-start_btn.pack()
+read_btn.pack()
 
 main_window.mainloop()

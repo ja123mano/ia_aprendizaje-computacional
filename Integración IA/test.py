@@ -37,5 +37,4 @@ def get_prediction(clf) -> str:
     #print(texture_desc)
     # Hacer la predicción de la imagen tomada
     prediction = clf.predict([texture_desc])[0]
-    #print(f"El bioma predicho es {biomas_id[prediction]}")
     return biomas_id[prediction]
