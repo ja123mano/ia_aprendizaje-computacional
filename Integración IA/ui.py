@@ -5,7 +5,7 @@ from tkinter import *
 from random import randrange
 from test import get_prediction
  
-with open(os.getcwd() + "\\MLPClassifier.clf", "rb") as file:
+with open(os.getcwd() + "\\Integración IA\\MLPClassifier.clf", "rb") as file:
     clf = pickle.load(file)
 
 # creating the tkinter window
